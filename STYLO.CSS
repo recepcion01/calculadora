@@ -1,0 +1,107 @@
+/* Estilo general para el fondo y el contenedor */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    overflow: hidden; /* Ocultar barras de desplazamiento */
+    background: linear-gradient(135deg, #FF7E5F, #FEB47B);
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95); /* Fondo semi-transparente */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+    max-width: 480px; /* Ancho fijo del contenedor */
+    position: relative;
+    z-index: 1; /* Asegúrate de que el contenido esté encima del fondo */
+    box-sizing: border-box; /* Incluir padding en el ancho total */
+}
+
+/* Estilo para los encabezados */
+h1, h2 {
+    margin: 0;
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Estilo para los formularios */
+form {
+    margin-bottom: 20px;
+}
+
+/* Estilo para los campos de entrada */
+input[type="date"] {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    width: 100%;
+    font-size: 1em;
+    margin-bottom: 15px;
+    box-sizing: border-box; /* Incluir padding en el ancho total */
+    transition: border-color 0.3s ease;
+}
+
+input[type="date"]:focus {
+    border-color: #FF7E5F;
+    outline: none;
+}
+
+/* Estilo para los botones */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #FF7E5F;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #FEB47B;
+    transform: scale(1.05);
+}
+
+/* Estilo para los resultados */
+#result1, #result2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        width: 90%; /* Ancho reducido para dispositivos móviles */
+    }
+
+    h1, h2 {
+        font-size: 1.4em; /* Reducir el tamaño de fuente en dispositivos móviles */
+    }
+
+    input[type="date"], button {
+        padding: 10px; /* Reducir el padding en dispositivos móviles */
+        font-size: 0.9em; /* Reducir el tamaño de la fuente en campos de entrada y botones */
+    }
+}
+
